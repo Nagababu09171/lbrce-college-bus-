@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+        .bus-info {
+            padding: 20px;
+        }
+        .bus-details {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .tracking-link {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tracking-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bus Details</h1>
+    </div>
+
+    <div class="container">
+        <div class="bus-info">
+            <div class="bus-details">
+                <p>Bus Name: <span id="busName"></span></p>
+                <p>Bus Registration Number: <span id="registrationNumber"></span></p>
+                <p>Bus Driver: <span id="busDriver"></span></p>
+            </div>
+        </div>
+        <a class="tracking-link" id="trackingLink" href="#" target="_blank">Click Here for Tracking</a>
+    </div>
+
+    <script>
+        // Get the bus details from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const busName = urlParams.get('busName');
+        const registrationNumber = urlParams.get('registrationNumber');
+        const busDriver = urlParams.get('busDriver');
+        const trackingLink = urlParams.get('trackingLink');
+
+        // Display the bus details on the page
+        document.getElementById('busName').textContent = busName;
+        document.getElementById('registrationNumber').textContent = registrationNumber;
+        document.getElementById('busDriver').textContent = busDriver;
+        document.getElementById('trackingLink').href = trackingLink;
+    </script>
+</body>
+</html>

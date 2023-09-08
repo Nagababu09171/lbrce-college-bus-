@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBRCE College Bus Routes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .route-card {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .route-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .bus-list {
+            list-style: none;
+            padding: 0;
+            display: none;
+        }
+        .bus-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .bus-icon {
+            font-size: 24px;
+            color: #fff;
+            margin-right: 10px;
+        }
+        .bus-link {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>LBRCE College Bus Routes</h1>
+    </div>
+
+    <div class="container">
+        <div class="route-card" onclick="toggleBusList('vijayawada')">
+            <div class="route-title">Vijayawada</div>
+            <ul class="bus-list" id="vijayawada">
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S1&registrationNumber=ABC123&busDriver=John%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S1</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S2&registrationNumber=ABC123&busDriver=Jane%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S2</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S3&registrationNumber=ABC123&busDriver=Jill%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S3</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S4&registrationNumber=ABC123&busDriver=Jane%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S4</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="route-card" onclick="toggleBusList('nandigama')">
+            <div class="route-title">Nandigama</div>
+            <ul class="bus-list" id="nandigama">
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J1&registrationNumber=ABC123&busDriver=Jack%20Smith&trackingLink=https://www.example.com/assumed-location" target="_blank">J1</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J2&registrationNumber=ABC123&busDriver=Jill%20Smith&trackingLink=https://www.example.com/assumed-location" target="_blank">J2</a>
+                </li>
+                 <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J3&registrationNumber=ABC123&busDriver=John%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">J3</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J4&registrationNumber=ABC123&busDriver=Jane%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">J4</a>
+                </li>               
+            </ul>
+        </div>
+    <div class="route-card" onclick="toggleBusList('nuvzid')">
+            <div class="route-title">Nuvzid</div>
+            <ul class="bus-list" id="nuvzid">
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S5&registrationNumber=ABC123&busDriver=Jack%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S5</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S6&registrationNumber=ABC123&busDriver=Jill%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S6</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S7&registrationNumber=ABC123&busDriver=John%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S7</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=S8&registrationNumber=ABC123&busDriver=Jane%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">S8</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="route-card" onclick="toggleBusList('tiruvuru')">
+            <div class="route-title">Tiruvuru</div>
+            <ul class="bus-list" id="tiruvuru">
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J5&registrationNumber=ABC123&busDriver=Jack%20Smith&trackingLink=https://www.example.com/assumed-location" target="_blank">J5</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J6&registrationNumber=ABC123&busDriver=Jill%20Smith&trackingLink=https://www.example.com/assumed-location" target="_blank">J6</a>
+                </li>
+                 <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J7&registrationNumber=ABC123&busDriver=John%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">J7</a>
+                </li>
+                <li class="bus-item">
+                    <i class="fas fa-bus bus-icon"></i>
+                    <a class="bus-link" href="bus_details.html?busName=J8&registrationNumber=ABC123&busDriver=Jane%20Doe&trackingLink=https://www.example.com/assumed-location" target="_blank">J8</a>
+                </li>               
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleBusList(routeId) {
+            const busList = document.getElementById(routeId);
+            if (busList.style.display === "none" || busList.style.display === "") {
+                busList.style.display = "block";
+            } else {
+                busList.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
